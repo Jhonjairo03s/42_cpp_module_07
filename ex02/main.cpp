@@ -52,23 +52,23 @@ int main(int, char**)
     }
     delete [] mirror;//
 
-    // 1. Probar con otro tipo de datos (ejemplo: cadenas de texto con templates)
+    // Mi test
     Array<std::string> words(3);
     words[0] = "Hola";
     words[1] = "Mundo";
     words[2] = "C++";
 
-    std::cout << "\nProbando Array de strings (Tamaño: " << words.size() << "):" << '\n';
+    std::cout << "\nTesting an array of strings (Size: " << words.size() << "):" << '\n';
     for (unsigned int i = 0; i < words.size(); i++)
     {
         std::cout << "words[" << i << "] = " << words[i] << '\n';
     }
-    // 2. Probar el operador de copia profunda
-    Array<std::string> copyWords(words);
-    copyWords[0] = "Adios"; // Modificamos la copia
 
-    std::cout << "\nVerificando copia profunda (original no debe cambiar):" << '\n';
-    std::cout << "Original words[0]: " << words[0] << '\n';     // Debe seguir siendo "Hola"
-    std::cout << "Copia copyWords[0]: " << copyWords[0] << '\n'; // Debe ser "Adios"
+    Array<std::string> copyWords(words);
+    copyWords[0] = "Adios";
+
+    std::cout << "\nChecking for deep copies:" << '\n';
+    std::cout << "Original words[0]: " << words[0] << '\n';
+    std::cout << "Copy copyWords[0]: " << copyWords[0] << '\n';
     return 0;
 }
