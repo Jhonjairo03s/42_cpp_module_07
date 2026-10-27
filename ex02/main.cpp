@@ -1,9 +1,11 @@
 #include <iostream>
 #include <Array.hpp>
+#include <cstdlib>
 
 #define MAX_VAL 750
 int main(int, char**)
 {
+    // Subject
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
@@ -49,5 +51,24 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
+
+    // 1. Probar con otro tipo de datos (ejemplo: cadenas de texto con templates)
+    Array<std::string> words(3);
+    words[0] = "Hola";
+    words[1] = "Mundo";
+    words[2] = "C++";
+
+    std::cout << "\nProbando Array de strings (Tamaño: " << words.size() << "):" << '\n';
+    for (unsigned int i = 0; i < words.size(); i++)
+    {
+        std::cout << "words[" << i << "] = " << words[i] << '\n';
+    }
+    // 2. Probar el operador de copia profunda
+    Array<std::string> copyWords(words);
+    copyWords[0] = "Adios"; // Modificamos la copia
+
+    std::cout << "\nVerificando copia profunda (original no debe cambiar):" << '\n';
+    std::cout << "Original words[0]: " << words[0] << '\n';     // Debe seguir siendo "Hola"
+    std::cout << "Copia copyWords[0]: " << copyWords[0] << '\n'; // Debe ser "Adios"
     return 0;
 }
