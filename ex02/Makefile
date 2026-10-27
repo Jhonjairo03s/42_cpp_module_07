@@ -6,14 +6,14 @@
 #    By: jhvalenc <jhvalenc@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/22 19:48:25 by jhvalenc          #+#    #+#              #
-#    Updated: 2026/10/22 19:49:04 by jhvalenc         ###   ########.fr        #
+#    Updated: 2026/10/26 14:44:17 by jhvalenc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = array
 
 CXX         = c++
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -I.
 
 SRCS        = main.cpp
 
